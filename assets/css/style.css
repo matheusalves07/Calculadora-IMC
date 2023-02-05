@@ -43,6 +43,18 @@ p{
    
 }
 
+.container:hover {
+    border-radius: 10px;
+    box-shadow: 01px 4px 10px rgba(255, 255, 255, 0.468);
+    max-width: 640px;
+    margin: 50px  auto;
+    background: var(--primary-color);
+    transition: 2.9s;
+    color: #fff;
+    padding: 20px;
+   
+}
+
 form input, form label, form button {
     height: 40px;
     display: block;
