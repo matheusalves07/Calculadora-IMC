@@ -69,3 +69,7 @@ function setResultado (msg, isValid){
  setResultado.appendChild(p);
 
 }
+
+
+
+
