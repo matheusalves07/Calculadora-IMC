@@ -15,6 +15,7 @@ function(e) {
         setResultado ('Peso invalido', false);
         return
     }
+    
 
     if (!altura ){
         setResultado ('Altura invalida', false);
