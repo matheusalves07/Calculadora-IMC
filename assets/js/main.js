@@ -1,8 +1,8 @@
-//  Captura evento  de submit do formulário 
+//  Captura evento  de submit do formulário
 
 const form = document.querySelector('#form');
 
-form.addEventListener('submit', 
+form.addEventListener('submit',
 function(e) {
     e.preventDefault();
     const inputPeso = e.target.querySelector('#peso');
