@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="playerBeat" class="playerPosition">
+        <div class="containerAnimation">
+            <div class="animation">
+                <div style="opacity: 0.380733;"></div><div style="opacity: 0;"></div><div style="opacity: 0.684062;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 0;"></div>
+                <div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 1;"></div><div style="opacity: 0;"></div><div style="opacity: 0;"></div><div style="opacity: 1;"></div><div style="opacity: 0.964888;"></div><div style="opacity: 1;"></div><div style="opacity: 0.991144;"></div><div style="opacity: 0;"></div><div style="opacity: 1;"></div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="containerPlayer">
+                <audio id="player" autoplay=""> 
+                    <source id="srcP" src="https://hts09.kshost.com.br:11310/live" type="audio/mpeg">  
+                    <span>Your browser dont support that element.</span>
+                </audio> 
+    
+                <div id="playpause" class="stoped">
+                    <span class="icon iconPlaying"><i class="fa fa-play-circle"></i></span>
+                    <span class="icon iconStoped"><i class="fa fa-pause-circle"></i></span>
+                    <span class="icon iconVolume"><i class="fa fa-volume-up"></i></span>
+                    <div class="volumeContainer hidden-xs" style="display: block;"><div id="slider" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="height: 50%;"></div><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="bottom: 50%;"></span></div></div>
+                </div>
+    
+                            <div class="imgPlayerCapa willOpacity rf-player-background" style="background-image: url(&quot;https://spaceks.net/site/images/music_template.jpg&quot;);">
+                </div>
+    
+                <div class="statusStream willOpacity">
+                    <span style="font-weight: bold;">Tocando Agora:</span>
+                    <marquee class="status cc_streaminfo" data-type="song" data-username="hoostcom" id="tocando" style="color: #333;opacity: 1;">Mandou Bem</marquee>
+                </div>
+                
+                <ul class="linksPlayrs hidden-sm hidden-xs">
+                    <li>  
+                        <a href="https://app.kshost.com.br/player/11310/realplayer.rm" class="android" target="_blank">
+                            <span class="helper"></span><i class="fa fa-play-circle-o"></i>
+                        </a>
+                        <div class="tooltip fade bottom in">Real Player</div>
+                    </li>				
+                   <li>
+                        <a href="http://app.kshost.com.br/player/11310/mediaplayer.asx" class="android" target="_blank">
+                            <span class="helper"></span><i class="fa fa-play-circle"></i>
+                        </a>
+                        <div class="tooltip fade bottom in">Media Player</div>
+                    </li>				
+                    <li>
+                        <a href="https://app.kshost.com.br/player/11310/listen.pls?sid=1" class="ios" target="_blank">
+                            <span class="helper"></span><i class="fa fa-bolt"></i>
+                        </a>
+                        <div class="tooltip fade bottom in">Winamp</div>
+                    </li>	
+    
+                    <li>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://radiocarvalhonews.com.br/hotsite" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="ios">
+                            <span class="helper"></span><i class="fa fa-facebook"></i>
+                        </a>
+                        <div class="tooltip fade bottom in">Facebook</div>
+                    </li>				
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        $(function() {
+            setInterval(function(){
+            $(".animation div").each(function(index) {
+                $(this).delay(100*index).animate({'opacity':'0'},100,function() {
+                $(this).delay(50*index).animate({'opacity':'1'},300); });
+            });	}, 3000);
+            
+            isPlaying = false; player = document.getElementById("player");
+            $('.iconPlaying').click(function() { 
+            if(!isPlaying) { player.currentTime = 0; document.getElementById("srcP").src = "https://hts09.kshost.com.br:11310/live";  player.load(); player.play(); 
+            isPlaying = true; }}); 
+            $('.iconStoped').click(function() { player.pause(); document.getElementById("srcP").src = ""; player.currentTime = 0;	isPlaying = false; });  
+        
+            isSliderShowing = false;
+            $("body").click(function(event) {
+            if(event.toElement.className != 'fa fa-volume-up' && event.toElement.className != 'volumeContainer hidden-xs' 
+            && event.toElement.className != 'ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all') {
+            if(isSliderShowing) { $('.volumeContainer').slideToggle(300); isSliderShowing = false; } } })
+        
+            $('.iconVolume').click(function() { $('.volumeContainer').slideToggle(300);
+            if(isSliderShowing) { isSliderShowing = false; } else { isSliderShowing = true; } });
+            $('#slider').slider({
+            orientation: "vertical", range: "min", value: 50, min: 0, max: 100, animate: true,
+            change: function (event, ui) { volume = ui.value; player.volume = volume / 100; } });
+        }); 
+        </script>
+
+<script> $(".linksPlayrs .pedidoMusica").click(function() { $(".overPedido").show(); $(".formPedidos").slideDown('500'); return false; }); </script>
+</body>
+</html>
