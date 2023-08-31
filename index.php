@@ -30,7 +30,7 @@ get_header();
 											<?php get_template_part( 'template-posts/loop/inner-grid' ); ?>
 										</div>
 									<?php
-								// End the loop. 
+								// End the loop.  
 								endwhile;
 								august_paging_nav();
 								?>
