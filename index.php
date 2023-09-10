@@ -47,6 +47,7 @@ get_header();
 	            </div>
             </div>
             </div> 
-		</main><!-- .site-main -->
+		</main><!-- .site-main -->  
+		
 	</div><!-- .content-area --> 
 <?php get_footer(); ?>
