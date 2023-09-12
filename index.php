@@ -11,7 +11,7 @@
  *
  * @package WordPress
  * @subpackage August
- * @since August 1.0
+ * @since August 1.0  
  */
 
 get_header();
