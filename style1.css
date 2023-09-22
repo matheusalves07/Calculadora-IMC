@@ -1,0 +1,40 @@
+@charset "UFT-8";
+
+body{
+
+    width: 100%;
+    margin-top: 10px;
+    background-color: aquamarine;
+    border-radius: 40px;
+    border: 10px 10px 10px black;
+
+}
+
+
+div {
+    padding: 20px;
+     margin-left: 40px;
+     margin-right: 40px;
+     border-radius: 20px;
+
+     width: 60vw;
+     background-color: antiquewhite;
+     height: 80px;
+     margin-bottom: 20px;
+}
+
+
+
+div:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+     margin-left: 40px;
+     margin-right: 40px;
+     border-radius: 20px;
+     height: 80px;
+     margin-bottom: 20px;
+     width: 60vw;
+     
+
+}
