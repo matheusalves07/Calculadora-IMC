@@ -41,7 +41,9 @@ get_header();
 	                </div>
 	                <div class="col-sm-3 col-xs-12 sidebar">
 	                	<?php if ( is_active_sidebar( 'sidebar-default' ) ): ?>
-				   			<?php dynamic_sidebar('sidebar-default'); ?>
+				   			<?php dynamic_sidebar 
+							
+							('sidebar-default'); ?>
 				   		<?php endif; ?>
 	                   	
 	                </div>
