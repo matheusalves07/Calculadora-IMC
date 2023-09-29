@@ -51,6 +51,6 @@ get_header();
             </div>
             </div>  
 		</main><!-- .site-main -->   
-		
+		 
 	</div><!-- .content-area --> 
 <?php get_footer(); ?>
