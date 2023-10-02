@@ -20,7 +20,7 @@ get_header();
 	<div id="primary" class="content-area content-index">
 		<main id="main" class="site-main" role="main">
 			<div class="container">
-			<div class="container-inner main-content">
+			<div class="container-inner main-content"> 
 				<div class="row">
 	                <!-- MAIN CONTENT -->   '	'	
 	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
