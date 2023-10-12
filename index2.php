@@ -21,8 +21,8 @@ get_header();
 		<main id="main" class="site-main" role="main">
 			<div class="container">
 			<div class="container-inner main-content"> 
-				<div class="row"> 
-	                <!-- MAIN CONTENT -->   '	'	
+				<div class="row">  
+	                <!-- MAIN CONTENT  -->   '	' 	
 	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 	                        <?php  if ( have_posts() ) : 
 	                        	while ( have_posts() ) : the_post();
